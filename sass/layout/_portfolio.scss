@@ -1,0 +1,161 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 6, 2016, 7:40:05 PM
+    Author     : coopers
+*/
+
+.portfolio-main {
+    flex: 1 1 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+    justify-content: center;
+    h2 {
+        color: black;
+        width: 100%;
+        text-align: center;
+    }
+    p {
+        flex: 1 1 100%;
+        max-width: 800px;
+        width: 100%;
+        font-size: 20px;
+        letter-spacing: 1.4px;
+        margin: 12px 0;
+    }
+    a, a:visited {
+        font-family: TheinMed;
+        transition: 0.2s;
+    }
+    .top-container {
+        flex: 1 1 100%;
+        display: flex;
+        max-width: 1200px;
+        flex-flow: row wrap;
+        justify-content: center;
+        margin-bottom: 40px;
+        p {
+            padding: 0 25px;
+        }
+    }
+    .single-image-top {
+        flex: 1 1 100%;
+        margin: 0 20px 40px 20px;
+        max-width: 1000px;
+        text-align: center;
+    }
+    .single-image, .single-text {
+        flex: 1 1 100%;
+        margin: 40px 20px;
+        max-width: 1000px;
+    }
+    .single-image {
+        text-align: center;
+    }
+    .single-text {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        margin-top: 0;
+        p {
+            max-width: 600px;
+        }
+    }
+    .top-image {
+        margin-bottom: 100px;
+    }
+    .white-stripe, .tan-stripe {
+        flex: 1 1 100%;
+        width: 100%;
+        display: flex;
+        padding: 100px 0;
+        align-items: center;
+        justify-content: center;
+        .container {
+            flex: 1 1 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 1200px;
+            flex-flow: row wrap;
+        }
+         p {
+            font-size: 16px;
+        }
+    }
+    .white-stripe {
+        background-color: $mywhite;
+    }
+    .one-third {
+        flex: 1 1 260px;
+        max-width: 400px;
+        padding: 0 25px;
+    }
+    .two-thirds {
+        flex: 2 2 300px;
+        max-width: 800px;
+        padding: 0 25px;
+    }
+    .one-half {
+        flex: 1 1 520px;
+        max-width: 600px;
+        padding: 0 25px;
+    }
+    .infog1, .infog2, .infog3 {
+        flex: 1 1 100%;  
+        max-width: 1000px;
+    }
+    .infog1 {
+        padding-right: 200px;
+    }
+    .infog2 {
+        padding: 60px 100px;
+    }
+    .infog3 {
+        padding-left: 200px;
+    }
+}
+.tan-frame {
+    img {
+    border: 20px solid $color2;
+    padding: 30px;
+    margin: 60px;
+    }
+}
+@media all and (max-width: 600px)  {
+    .portfolio-main {
+        h2 {
+            margin-bottom: 12px;
+        }
+        p {
+            font-size: 16px;
+        }
+        .single-image, .single-text {
+            margin: 8px 20px;
+        }
+        .top-container {
+            margin-bottom: 20px;
+        }
+        .top-image {
+            margin-bottom: 28px;
+        }
+        img {
+            margin-top: 12px;
+            margin-bottom: 12px;
+        }
+        .white-stripe, .tan-stripe {
+            padding: 30px 0;
+        }
+        .tan-frame {
+            img {
+                padding: 20px;
+                margin: 10px 0 0 0;
+            }
+        }
+    }
+}

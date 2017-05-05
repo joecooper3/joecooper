@@ -1,0 +1,107 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 31, 2016, 5:55:23 PM
+    Author     : coopers
+*/
+#page {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.site-content {
+    flex: 1 1 100%;
+    display: flex;
+    justify-content: center;
+    a, a:visited {
+        color: $color1;
+        text-decoration: none;
+        transition: 0.2s;
+    }
+    a:hover {
+        color: black;
+    }
+}
+
+.trio-container {
+    display: flex;
+    flex: 1 1 100%;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.site-main {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    p {
+        font-size: 1.1rem;
+    }
+}
+
+.project {
+    flex: 1 0 33%;
+    margin: 50px 0 50px 0;
+    display: flex;
+    justify-content: center;
+    a,a:visited {
+        color: #111111;
+        text-decoration: none;
+        font-size: 3.0em;
+        font-family:TheinLight;
+        letter-spacing: 5px;
+    }
+}
+
+.entry-title {
+    margin-left: 40px;
+}
+
+.entry-content {
+    margin-top: 0;
+    margin-left: 40px;
+}
+
+.site-footer {
+    text-align: center;
+    font-size: 0.7em;
+    font-family: 'TheinBold';
+    text-transform: uppercase;
+}
+
+h2 {
+    font-family: TheinMed;
+    font-size: 42px;   
+    font-weight: normal;
+}
+
+.guardem {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+}
+
+.site-footer {
+    background-color: $color1;
+    color: $mywhite;
+    text-align: center;
+    flex: 1 1 100%;
+    padding: 20px;
+    font-size: 15px;
+    font-family: TheinReg;
+    letter-spacing: 1px;
+}
+
+
+@media all and (max-width: 850px)  {
+    h2 {
+        font-size: 30px;
+    }
+}

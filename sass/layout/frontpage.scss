@@ -1,0 +1,204 @@
+/*
+Frontpage.scss
+*/
+/* 
+    Created on : Mar 10, 2017, 4:07:33 PM
+    Author     : coopers
+*/
+
+.site-content {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1 1 100%;
+    .frontpage-container {
+        max-width: 1200px;
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        margin: 20px;
+        .sw-row {
+            flex: 1 1 100%;
+            display: flex;
+            flex-flow: row wrap;
+            margin: 20px 0;
+        }
+        .sw-header {
+            width: 100%;
+            flex: 1 1 100%;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            .spacer {
+                flex: 2 2 200px;
+                width: 100px;
+            }
+            .line { 
+                flex: 3 3 300px;
+                width: 100%;
+                padding-top: 10px;
+                hr {
+                    background-color: black;
+                    height: 3px;
+                }
+            }
+            .text {
+                flex: 3 3 300px;
+                width: 100%;
+                margin-right: 25px;
+                h2 {
+                    float: right;
+                    color: black;
+                    margin: 0;
+                }
+            }
+        }
+        .sw-title {
+            flex: 1 1 100px;
+            color: $color1;
+            font-size: 36px;
+            font-family: TheinReg;
+            letter-spacing: 1.6px;
+            margin: 0 25px;
+        }
+        .sw-item {
+            flex: 1 1 100px;
+            margin: 0 25px;
+            max-width: 240px;
+            p {
+                font-size: 36px;
+                font-family: TheinThin;
+            }
+        }
+    }
+    .contact-container {
+        background-color: $mywhite;
+        width: 100%;
+        flex: 1 1 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: row wrap;
+        .contact-row {
+            flex: 1 1 100%;
+            display: flex;
+            flex-flow: row wrap;
+            margin: 20px 0;
+            max-width: 1200px;
+        }
+        .contact-header {
+            width: 100%;
+            margin: 20px;
+            flex: 1 1 100%;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            .spacer {
+                flex: 2 2 200px;
+                width: 100px;
+            }
+            .line { 
+                flex: 4 4 400px;
+                width: 100%;
+                padding-top: 10px;
+                hr {
+                    background-color: $color1;
+                    height: 3px;
+                }
+            }
+            .text {
+                flex: 2 2 200px;
+                width: 100%;
+                margin-right: 25px;
+                h2 {
+                    float: right;
+                    color: $color1;
+                    margin: 0;
+                }
+            }
+        }
+
+        .main-contact-container {
+            position: relative;
+            top: 0;
+            width: 100%;
+            flex: 1 1 100%;
+            display: flex;
+            flex-flow: row nowrap;
+            z-index: 12;
+            margin-bottom: 50px;
+            margin-top: 20px;
+            .spacer {
+                flex: 1 1 80%;
+                background-image: url('images/onroof@2x.jpg');
+                background-size: cover;
+                background-position: bottom center;
+                height: 700px;
+                margin-top: 75px;
+            }
+            .main-contact {
+                background-color: rgba(12,60,180,.8);
+                flex: 1 1 30%;
+                width: 100%;
+                color: $mywhite;
+                font-family: TheinReg;
+                font-size: 25px;
+                letter-spacing: 1.25px;
+                padding: 20px;
+                z-index: 10;
+                margin-left: -200px;
+                margin-right: 5%;
+                max-width: 400px;
+                h2 {
+                    margin: 0;
+                }
+                label {
+                    font-weight: 400;
+                    font-size: 20px;
+                }
+                input {
+                    font-family: TheinMed;
+                    color: black;
+                    font-size: 22px;
+                    height: 40px;
+                    &:focus {
+                        border: 2.0px solid black;
+                    }
+                }
+                textarea {
+                    font-size: 18px;
+                    color: black;
+                    font-family: TheinReg;
+                    &:focus {
+                        border: 2.0px solid black;
+                    }
+                }
+                .last_row {
+                    text-align: center;
+                    margin-top: 20px;
+                }
+                .btn {
+                    background-color: $color2;
+                    border: 0;
+                    padding: 10px 30px;
+                    height: auto;
+                    transition: 0.3s;
+                    &:hover {
+                        color: $color1;
+                    }
+                }
+            }
+        }
+
+    }
+}
+@media all and (max-width: 850px)  {
+    .site-content {
+        .contact-container {
+            .main-contact-container {
+                .spacer {
+                    background-image: url('images/onroof.jpg');
+                }
+            }
+        }
+    }
+}
