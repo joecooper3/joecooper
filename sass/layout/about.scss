@@ -1,0 +1,57 @@
+/* ABOUT
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 6, 2017, 3:04:09 PM
+    Author     : Joe “THE Joe Cooper” Cooper
+*/
+.about-main {    
+    h2 {
+    width: 100%;
+    text-align: center;
+}
+    flex: 1 1 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+    justify-content: center;
+    .about-container {
+        display: flex;
+        max-width: 1200px;
+        justify-content: center;
+        flex-flow: row wrap;
+        .itme {
+            flex: 1 1 800px;
+            padding: 20px;
+            max-width: 1000px;
+            img {
+                width: 100%;
+                max-width: 1000px;
+            }
+        }
+        .paras {
+            flex: 1 1 800px;
+            max-width: 800px;
+            padding:20px;
+        }
+        p {
+            
+            width: 100%;
+            font-size: 20px;
+            letter-spacing: 1.4px;
+            margin: 20px 0;
+        }
+    }
+    a, a:visited {
+        color: black;
+        border-bottom: 2px solid $color1;
+        transition: color 0.2s;
+    }
+    a:hover {
+        color: $color1;
+        border-bottom: 0;
+    }
+}

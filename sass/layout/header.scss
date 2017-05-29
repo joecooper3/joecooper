@@ -29,3 +29,28 @@
         }
     }
 }
+@media all and (max-width: 725px)  {
+    #masthead {
+        flex-flow: row wrap;
+        .container {
+            align-items: flex-start;
+            h1 {
+                order: 1;
+                padding-right: 0;
+                padding-left: 30px;
+            }
+        }
+    }
+}
+@media all and (max-width: 350px) {
+    #masthead {         
+        .container {
+            h1 {
+    padding-left: 22px;
+    padding-top:5px;
+                font-size: 37px;
+                letter-spacing: -2px;
+            }
+        }
+    }
+}

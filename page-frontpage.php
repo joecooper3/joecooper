@@ -15,7 +15,15 @@
  */
 
 get_header(); ?>
-
+<div class="intro-container">
+    <div class="intro-container-2">
+        <p>Joe Cooper is a front end developer and graphic designer living in Ridgewood, Queens.
+        He is currently the Associate Director of Communications and Design for 
+        <a href="https://www.cases.org" target="_blank">CASES</a> and has 
+        provided freelance web and print design services for non-profit organizations
+        based in the New York City area.</p>
+    </div>
+</div>
 		<main id="main" class="site-main" role="main">
 
 			<?php

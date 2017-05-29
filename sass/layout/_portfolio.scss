@@ -53,6 +53,7 @@ and open the template in the editor.
         flex: 1 1 100%;
         margin: 40px 20px;
         max-width: 1000px;
+        padding: 50px;
     }
     .single-image {
         text-align: center;
@@ -69,11 +70,10 @@ and open the template in the editor.
     .top-image {
         margin-bottom: 100px;
     }
-    .white-stripe, .tan-stripe {
+    .white-stripe, .tan-stripe, .bottom-stripe-white, .bottom-stripe-tan {
         flex: 1 1 100%;
         width: 100%;
         display: flex;
-        padding: 100px 0;
         align-items: center;
         justify-content: center;
         .container {
@@ -88,11 +88,36 @@ and open the template in the editor.
             font-size: 16px;
         }
     }
-    .white-stripe {
+    .white-stripe, .tan-stripe {
+                padding: 100px 0;
+                .container {
+                    justify-content: center;
+                }
+    }
+    .bottom-stripe-white, .bottom-stripe-tan {
+                padding: 30px 0;
+                .container {
+                    justify-content: space-between;
+                    a {
+                        font-size: 20px;
+                    }
+                    .left {
+                        i {
+                            margin-right: 15px;
+                        }
+                    }
+                    .right {
+                        i {
+                            margin-left: 15px;
+                        }
+                    }
+                }
+    }
+    .white-stripe, .bottom-stripe-white {
         background-color: $mywhite;
     }
     .one-third {
-        flex: 1 1 260px;
+        flex: 1 1 300px;
         max-width: 400px;
         padding: 0 25px;
     }
@@ -102,7 +127,7 @@ and open the template in the editor.
         padding: 0 25px;
     }
     .one-half {
-        flex: 1 1 520px;
+        flex: 1 1 450px;
         max-width: 600px;
         padding: 0 25px;
     }
@@ -127,6 +152,40 @@ and open the template in the editor.
     margin: 60px;
     }
 }
+@media all and (max-width: 1250px)  {
+    .portfolio-main {
+        .bottom-stripe-white {
+            .container {
+                .left {
+                    margin-left: 15px;
+                }
+                .right {
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+}
+@media all and (max-width: 750px)  {
+   .portfolio-main {
+       .white-stripe, .tan-stripe, .bottom-stripe-tan, .bottom-stripe-white {
+           padding: 70px 0;
+       }
+    .one-half, .one-third {
+        padding: 20px;
+        box-sizing: content-box;
+    }
+    .single-image, .single-text {
+        padding: 0;
+    }
+    .tan-frame {
+            img {
+                padding: 20px;
+                margin: 10px 0 0 0;
+            }
+        }
+}
+}
 @media all and (max-width: 600px)  {
     .portfolio-main {
         h2 {
@@ -150,12 +209,6 @@ and open the template in the editor.
         }
         .white-stripe, .tan-stripe {
             padding: 30px 0;
-        }
-        .tan-frame {
-            img {
-                padding: 20px;
-                margin: 10px 0 0 0;
-            }
         }
     }
 }

@@ -8,7 +8,8 @@
  */
 ?>
 
-<div class="frontpage-container">
+
+<div id="portfolio" class="frontpage-container">
     <div class="sw-row">
         <div class="sw-header">
             <div class="spacer"></div>
@@ -22,7 +23,7 @@
         <div class="sw-item">
             <a href="cases-website/">
                 <img src="wp-content/themes/joecooper/images/cases.svg">
-                <p>CASES Website</p>
+                <p>CASES</p>
             </a>
         </div>
         <div class="sw-item">
@@ -84,7 +85,7 @@
 
 </div><!-- .frontpage-container -->
 </main>
-<div class="contact-container">
+<div id="contact" class="contact-container">
     <div class="contact-row">
         <div class="contact-header">
             <div class="spacer"></div>

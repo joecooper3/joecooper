@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
 Theme Name: Joe Cooper
 Theme URI: http://underscores.me/
@@ -588,17 +589,25 @@ a:hover, a:active {
   left: -999em;
   top: 0;
 }
+.main-navigation ul ul li {
+  line-height: 23px;
+  margin-bottom: 10px;
+}
 .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
   left: 100%;
 }
+.main-navigation ul ul li:last-child {
+  margin-bottom: 0;
+}
 .main-navigation ul ul .cat {
   width: 100%;
-  margin: 12px 0;
+  margin: 10px 0 13px 0;
 }
 .main-navigation ul ul .cat a {
   color: #000;
   padding-bottom: 5px;
   border-bottom: 0.5px solid black;
+  cursor: default;
 }
 .main-navigation ul ul a {
   width: 200px;
@@ -625,21 +634,14 @@ a:hover, a:active {
   color: black;
 }
 
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
+.menu-toggle {
+  display: none;
+}
+
+.main-navigation ul {
   display: block;
 }
 
-@media screen and (min-width: 37.5em) {
-  .menu-toggle {
-    display: none;
-  }
-
-  .main-navigation ul {
-    display: block;
-  }
-}
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
@@ -660,6 +662,79 @@ a:hover, a:active {
   width: 50%;
 }
 
+.not-okay-container {
+  display: none;
+  flex: 100%;
+}
+.not-okay-container .menu-okay-okay-container {
+  display: none;
+}
+
+@media all and (max-width: 725px) {
+  .main-navigation {
+    order: 2;
+  }
+
+  .menu-toggle {
+    display: block;
+    border: 0;
+    background-color: #FDFDFD;
+    color: #0C3CB4;
+    font-size: 35px;
+    box-shadow: none;
+  }
+  .menu-toggle:hover, .menu-toggle:active {
+    box-shadow: none;
+  }
+
+  .not-okay-container {
+    display: flex;
+  }
+
+  #masthead .container .toggled i {
+    transform: rotate(90deg);
+  }
+  #masthead .menu-okay-okay-container {
+    display: none;
+    width: 100%;
+  }
+  #masthead .menu-okay-okay-container #primary-menu {
+    display: flex;
+    flex-flow: column wrap;
+    padding-left: 0;
+    margin: 20px 40px 0 40px;
+    list-style: none;
+  }
+  #masthead .menu-okay-okay-container #primary-menu li {
+    padding-right: 0;
+    flex: 100%;
+    border-top: 0.25px solid #0C3CB4;
+  }
+  #masthead .menu-okay-okay-container #primary-menu li a, #masthead .menu-okay-okay-container #primary-menu li a:visited {
+    text-decoration: none;
+    color: #0C3CB4;
+    text-transform: uppercase;
+    display: block;
+    padding: 10px 0;
+    transition: 0.3s;
+    background-color: #fdfdfd;
+  }
+  #masthead .menu-okay-okay-container #primary-menu li .cat {
+    display: none;
+  }
+  #masthead .menu-okay-okay-container #primary-menu li ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 20px;
+  }
+  #masthead .menu-okay-okay-container #primary-menu li:first-child {
+    border-top: none;
+  }
+
+  i {
+    transition: 0.4s;
+  }
+}
 /*--------------------------------------------------------------
 # Accessibility My Bro
 --------------------------------------------------------------*/
@@ -1070,6 +1145,7 @@ and open the template in the editor.
   flex: 1 1 100%;
   margin: 40px 20px;
   max-width: 1000px;
+  padding: 50px;
 }
 .portfolio-main .single-image {
   text-align: center;
@@ -1086,15 +1162,14 @@ and open the template in the editor.
 .portfolio-main .top-image {
   margin-bottom: 100px;
 }
-.portfolio-main .white-stripe, .portfolio-main .tan-stripe {
+.portfolio-main .white-stripe, .portfolio-main .tan-stripe, .portfolio-main .bottom-stripe-white, .portfolio-main .bottom-stripe-tan {
   flex: 1 1 100%;
   width: 100%;
   display: flex;
-  padding: 100px 0;
   align-items: center;
   justify-content: center;
 }
-.portfolio-main .white-stripe .container, .portfolio-main .tan-stripe .container {
+.portfolio-main .white-stripe .container, .portfolio-main .tan-stripe .container, .portfolio-main .bottom-stripe-white .container, .portfolio-main .bottom-stripe-tan .container {
   flex: 1 1 100%;
   display: flex;
   align-items: center;
@@ -1102,14 +1177,35 @@ and open the template in the editor.
   max-width: 1200px;
   flex-flow: row wrap;
 }
-.portfolio-main .white-stripe p, .portfolio-main .tan-stripe p {
+.portfolio-main .white-stripe p, .portfolio-main .tan-stripe p, .portfolio-main .bottom-stripe-white p, .portfolio-main .bottom-stripe-tan p {
   font-size: 16px;
 }
-.portfolio-main .white-stripe {
+.portfolio-main .white-stripe, .portfolio-main .tan-stripe {
+  padding: 100px 0;
+}
+.portfolio-main .white-stripe .container, .portfolio-main .tan-stripe .container {
+  justify-content: center;
+}
+.portfolio-main .bottom-stripe-white, .portfolio-main .bottom-stripe-tan {
+  padding: 30px 0;
+}
+.portfolio-main .bottom-stripe-white .container, .portfolio-main .bottom-stripe-tan .container {
+  justify-content: space-between;
+}
+.portfolio-main .bottom-stripe-white .container a, .portfolio-main .bottom-stripe-tan .container a {
+  font-size: 20px;
+}
+.portfolio-main .bottom-stripe-white .container .left i, .portfolio-main .bottom-stripe-tan .container .left i {
+  margin-right: 15px;
+}
+.portfolio-main .bottom-stripe-white .container .right i, .portfolio-main .bottom-stripe-tan .container .right i {
+  margin-left: 15px;
+}
+.portfolio-main .white-stripe, .portfolio-main .bottom-stripe-white {
   background-color: #FDFDFD;
 }
 .portfolio-main .one-third {
-  flex: 1 1 260px;
+  flex: 1 1 300px;
   max-width: 400px;
   padding: 0 25px;
 }
@@ -1119,7 +1215,7 @@ and open the template in the editor.
   padding: 0 25px;
 }
 .portfolio-main .one-half {
-  flex: 1 1 520px;
+  flex: 1 1 450px;
   max-width: 600px;
   padding: 0 25px;
 }
@@ -1143,6 +1239,30 @@ and open the template in the editor.
   margin: 60px;
 }
 
+@media all and (max-width: 1250px) {
+  .portfolio-main .bottom-stripe-white .container .left {
+    margin-left: 15px;
+  }
+  .portfolio-main .bottom-stripe-white .container .right {
+    margin-right: 15px;
+  }
+}
+@media all and (max-width: 750px) {
+  .portfolio-main .white-stripe, .portfolio-main .tan-stripe, .portfolio-main .bottom-stripe-tan, .portfolio-main .bottom-stripe-white {
+    padding: 70px 0;
+  }
+  .portfolio-main .one-half, .portfolio-main .one-third {
+    padding: 20px;
+    box-sizing: content-box;
+  }
+  .portfolio-main .single-image, .portfolio-main .single-text {
+    padding: 0;
+  }
+  .portfolio-main .tan-frame img {
+    padding: 20px;
+    margin: 10px 0 0 0;
+  }
+}
 @media all and (max-width: 600px) {
   .portfolio-main h2 {
     margin-bottom: 12px;
@@ -1165,10 +1285,6 @@ and open the template in the editor.
   }
   .portfolio-main .white-stripe, .portfolio-main .tan-stripe {
     padding: 30px 0;
-  }
-  .portfolio-main .tan-frame img {
-    padding: 20px;
-    margin: 10px 0 0 0;
   }
 }
 #masthead {
@@ -1203,6 +1319,27 @@ and open the template in the editor.
   color: black;
 }
 
+@media all and (max-width: 725px) {
+  #masthead {
+    flex-flow: row wrap;
+  }
+  #masthead .container {
+    align-items: flex-start;
+  }
+  #masthead .container h1 {
+    order: 1;
+    padding-right: 0;
+    padding-left: 30px;
+  }
+}
+@media all and (max-width: 350px) {
+  #masthead .container h1 {
+    padding-left: 22px;
+    padding-top: 5px;
+    font-size: 37px;
+    letter-spacing: -2px;
+  }
+}
 /*
 Frontpage.scss
 */
@@ -1210,10 +1347,82 @@ Frontpage.scss
     Created on : Mar 10, 2017, 4:07:33 PM
     Author     : coopers
 */
+@keyframes intro {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@keyframes portfolio-top {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  33% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@keyframes swrow {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
 .site-content {
   display: flex;
   flex-flow: row wrap;
   flex: 1 1 100%;
+}
+.site-content .intro-container {
+  background-color: #FDFDFD;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.site-content .intro-container .intro-container-2 {
+  flex: 1 0 200px;
+  max-width: 1200px;
+  display: flex;
+  justify-content: flex-end;
+}
+.site-content .intro-container .intro-container-2 p {
+  animation-name: intro;
+  animation-duration: 1.5s;
+  transition-timing-function: ease;
+  margin: 70px 0 100px 0;
+  max-width: 865px;
+  font-size: 32px;
+  font-family: TheinReg;
+  color: black;
+  text-align: right;
+  padding: 0 45px;
+}
+.site-content .intro-container .intro-container-2 p a, .site-content .intro-container .intro-container-2 p a:visited {
+  color: black;
+  border-bottom: 3px solid #0C3CB4;
+  padding-bottom: 2px;
+  transition: color 0.3s;
+}
+.site-content .intro-container .intro-container-2 p a:hover {
+  color: #0C3CB4;
+  border-bottom: 0;
 }
 .site-content .frontpage-container {
   max-width: 1200px;
@@ -1258,6 +1467,11 @@ Frontpage.scss
   color: black;
   margin: 0;
 }
+.site-content .frontpage-container .sw-header .line, .site-content .frontpage-container .sw-header .text {
+  animation-name: portfolio-top;
+  animation-duration: 2.25s;
+  transition-timing-function: ease;
+}
 .site-content .frontpage-container .sw-title {
   flex: 1 1 100px;
   color: #0C3CB4;
@@ -1272,8 +1486,15 @@ Frontpage.scss
   max-width: 240px;
 }
 .site-content .frontpage-container .sw-item p {
+  text-align: center;
+  margin: 20px 0 30px 0;
   font-size: 36px;
   font-family: TheinThin;
+}
+.site-content .frontpage-container .sw-title, .site-content .frontpage-container .sw-item {
+  animation-name: swrow;
+  animation-duration: 3s;
+  transition-timing-function: ease;
 }
 .site-content .contact-container {
   background-color: #FDFDFD;
@@ -1394,8 +1615,161 @@ Frontpage.scss
   color: #0C3CB4;
 }
 
+#caldera_notices_1 {
+  /* height: 800px; */
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+#caldera_notices_1 .alert {
+  background-color: transparent;
+  border: 0;
+  color: #FDFDFD;
+}
+
 @media all and (max-width: 850px) {
   .site-content .contact-container .main-contact-container .spacer {
     background-image: url("images/onroof.jpg");
   }
+}
+@media all and (max-width: 1000px) {
+  .site-content .frontpage-container .sw-item p {
+    font-size: 25px;
+  }
+}
+@media all and (max-width: 715px) {
+  .site-content .intro-container .intro-container-2 p {
+    font-size: 25px;
+    text-align: center;
+  }
+  .site-content .frontpage-container .sw-item {
+    margin: 0 15px;
+  }
+  .site-content .frontpage-container .sw-item p {
+    font-size: 20px;
+  }
+}
+@media all and (max-width: 650px) {
+  .site-content .contact-container .main-contact-container {
+    margin-bottom: 0;
+  }
+  .site-content .contact-container .main-contact-container .spacer {
+    display: none;
+  }
+  .site-content .contact-container .main-contact-container .main-contact {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+    background-color: #0C3CB4;
+    padding: 40px 25px;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+  }
+  .site-content .contact-container .main-contact-container .main-contact .caldera-grid {
+    max-width: 400px;
+  }
+
+  #caldera_notices_1 {
+    height: auto;
+  }
+  #caldera_notices_1 .alert {
+    text-shadow: 0;
+  }
+}
+@media all and (max-width: 600px) {
+  .site-content .frontpage-container .sw-header .spacer {
+    display: none;
+  }
+  .site-content .frontpage-container .sw-title {
+    flex: 1 1 200px;
+    margin: 0 15px;
+    font-size: 50px;
+    text-align: center;
+    padding-bottom: 60px;
+  }
+  .site-content .frontpage-container .sw-row {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+  .site-content .frontpage-container .sw-item {
+    flex: 1 1 200px;
+  }
+  .site-content .contact-container .contact-header .spacer {
+    display: none;
+  }
+}
+@media all and (max-width: 500px) {
+  .site-content .intro-container .intro-container-2 p {
+    font-size: 20px;
+  }
+  .site-content .frontpage-container .sw-title {
+    flex: 1 1 125px;
+    margin: 0 15px;
+  }
+  .site-content .frontpage-container .sw-item {
+    flex: 1 1 125px;
+  }
+}
+@media all and (max-width: 350px) {
+  .site-content .frontpage-container .sw-item {
+    padding: 0 30px 10px 30px;
+  }
+}
+/* ABOUT
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 6, 2017, 3:04:09 PM
+    Author     : Joe “THE Joe Cooper” Cooper
+*/
+.about-main {
+  flex: 1 1 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.about-main h2 {
+  width: 100%;
+  text-align: center;
+}
+.about-main .about-container {
+  display: flex;
+  max-width: 1200px;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+.about-main .about-container .itme {
+  flex: 1 1 800px;
+  padding: 20px;
+  max-width: 1000px;
+}
+.about-main .about-container .itme img {
+  width: 100%;
+  max-width: 1000px;
+}
+.about-main .about-container .paras {
+  flex: 1 1 800px;
+  max-width: 800px;
+  padding: 20px;
+}
+.about-main .about-container p {
+  width: 100%;
+  font-size: 20px;
+  letter-spacing: 1.4px;
+  margin: 20px 0;
+}
+.about-main a, .about-main a:visited {
+  color: black;
+  border-bottom: 2px solid #0C3CB4;
+  transition: color 0.2s;
+}
+.about-main a:hover {
+  color: #0C3CB4;
+  border-bottom: 0;
 }

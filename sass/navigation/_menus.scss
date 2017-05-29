@@ -1,126 +1,201 @@
 .main-navigation {
-	clear: both;
-	display: block;
-        font-family: "TheinLight";
-        letter-spacing: 1px;
-        font-size: 20px;
+    clear: both;
+    display: block;
+    font-family: "TheinLight";
+    letter-spacing: 1px;
+    font-size: 20px;
+    color: $color1;
+    ul {
+        display: none;
+        list-style: none;
+        margin: 0;
+        padding-left: 45px;
+
+        ul {
+            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+            float: left;
+            position: absolute;
+            top: 1.5em;
+            width: 300px;
+            padding: 0 20px 20px 20px;
+            left: -999em;
+            z-index: 99999;
+            background-color: #FDFDFD;
+
+            ul {
+                left: -999em;
+                top: 0;
+            }
+
+            li {
+                line-height: 23px;
+                margin-bottom: 10px;
+                &:hover > ul,
+                    &.focus > ul {
+                    left: 100%;
+                }
+            }
+            li:last-child {
+                margin-bottom: 0;
+            }
+            .cat {
+                a {
+                    color: #000;
+                    padding-bottom: 5px;
+                    border-bottom: 0.5px solid black;
+                    cursor: default;
+                }
+                width:100%;
+                margin: 10px 0 13px 0;
+            }
+            a {
+                width: 200px;
+            }
+
+            :hover > a,
+                .focus > a {
+            }
+
+            a:hover,
+                a.focus {
+            }
+        }
+
+        li:hover > ul,
+            li.focus > ul {
+            left: auto;
+        }
+    }
+    li {
+        float: left;
+        position: relative;
+        padding-right: 30px;
+
+        &:hover > a,
+            &.focus > a {
+        }
+    }
+    .lastitem:after {
+        content: none;
+    }
+    a, a:visited {
+        text-decoration: none;
+        text-transform: lowercase;
         color: $color1;
-	ul {
-		display: none;
-		list-style: none;
-		margin: 0;
-		padding-left: 45px;
+        transition: 0.2s;
+    }
+    a:hover {
+        color: black;
+    }
 
-		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
-			position: absolute;
-			top: 1.5em;
-                        width: 300px;
-                        padding: 0 20px 20px 20px;
-			left: -999em;
-			z-index: 99999;
-                        background-color: #FDFDFD;
-
-			ul {
-				left: -999em;
-				top: 0;
-			}
-
-			li {
-				&:hover > ul,
-				&.focus > ul {
-					left: 100%;
-				}
-			}
-                        .cat {
-                            a {
-                            color: #000;
-                            padding-bottom: 5px;
-                            border-bottom: 0.5px solid black;
-                            }
-                            width:100%;
-                            margin: 12px 0;
-                        }
-			a {
-				width: 200px;
-			}
-
-			:hover > a,
-			.focus > a {
-			}
-
-			a:hover,
-			a.focus {
-			}
-		}
-
-		li:hover > ul,
-		li.focus > ul {
-			left: auto;
-		}
-	}
-	li {
-		float: left;
-		position: relative;
-                padding-right: 30px;
-
-		&:hover > a,
-		&.focus > a {
-		}
-	}
-        .lastitem:after {
-            content: none;
-        }
-	a, a:visited {
-		text-decoration: none;
-                text-transform: lowercase;
-                color: $color1;
-                transition: 0.2s;
-	}
-        a:hover {
-            color: black;
-        }
-
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a,
-	.current-menu-ancestor > a {
-	}
+    .current_page_item > a,
+    .current-menu-item > a,
+    .current_page_ancestor > a,
+    .current-menu-ancestor > a {
+    }
 }
 
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
+.menu-toggle {
+    display: none;
 }
-
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: block;
-	}
+.main-navigation ul {
+    display: block;
 }
 
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
 
-	.site-main & {
-		margin: 0 0 1.5em;
-		overflow: hidden;
-	}
+    .site-main & {
+        margin: 0 0 1.5em;
+        overflow: hidden;
+    }
 
-	.nav-previous {
-		float: left;
-		width: 50%;
-	}
+    .nav-previous {
+        float: left;
+        width: 50%;
+    }
 
-	.nav-next {
-		float: right;
-		text-align: right;
-		width: 50%;
-	}
+    .nav-next {
+        float: right;
+        text-align: right;
+        width: 50%;
+    }
+}
+
+.not-okay-container {
+    display: none;
+    flex: 100%;
+    .menu-okay-okay-container {
+        display: none;
+    }
+}
+
+@media all and (max-width: 725px)  {
+    .main-navigation {
+        order:2;
+    }
+    .menu-toggle {
+        display: block;
+        border: 0;
+        background-color: #FDFDFD;
+        color: $color1;
+        font-size: 35px;
+        box-shadow: none;
+        &:hover, &:active {
+            box-shadow: none;
+        }
+    }
+    .not-okay-container {
+        display: flex;
+    }
+    #masthead {
+        .container {
+            .toggled {
+                i {
+                    transform: rotate(90deg);
+                }
+            }
+        }
+        .menu-okay-okay-container {
+            display: none;
+            width:100%;
+            #primary-menu {
+                    display: flex;
+                    flex-flow: column wrap;
+                    padding-left: 0;
+                    margin: 20px 40px 0 40px;
+                    list-style: none;
+                    li {
+                        padding-right: 0;
+                        flex: 100%;
+                        border-top: 0.25px solid $color1;
+                        a, a:visited {
+                            text-decoration: none;
+                            color: $color1;
+                            text-transform: uppercase;
+                            display: block;
+                            padding: 10px 0;
+                            transition: 0.3s;
+                            background-color: #fdfdfd;
+                        }
+                        .cat {
+                            display: none;
+                        }
+                        ul {
+                            list-style: none;
+                            margin: 0;
+                            padding: 0 0 0 20px;
+                        }
+                    }
+                    li:first-child {
+                        border-top: none;
+                    }
+            }
+        }
+
+    }
+    i {
+        transition: 0.4s;
+    }
 }
