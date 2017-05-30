@@ -2,3 +2,4 @@ node_modules/
 compiled/
 languages/
 .sass-cache/
+.DS_Store
